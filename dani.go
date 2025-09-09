@@ -5,19 +5,15 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, World!")
-	var age int
-	age = 12
 
-	fmt.Print("type your age: ")
+	for i := 1; i <= 10; i++ {
 
-	fmt.Scanln(&age)
+		for z := 1; z <= 10; z++ {
 
-	if age > 18 {
-		fmt.Println("GOOD")
-	} else {
+			fmt.Println(i, "X", z, "= ", z*i)
 
-		fmt.Println("BAD")
+		}
+
 	}
 
 }
