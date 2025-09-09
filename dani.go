@@ -1,10 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	fmt.Println("Hello, World!")
-	fmt.Println("dddd, World!")
-	fmt.Println("yyy, World!")
+	var age int
+	age = 12
+
+	fmt.Print("type your age: ")
+
+	fmt.Scanln(&age)
+
+	if age > 18 {
+		fmt.Println("GOOD")
+	} else {
+
+		fmt.Println("BAD")
+	}
 
 }
