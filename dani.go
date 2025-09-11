@@ -1,19 +1,24 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
+	var num int
+	var x int
 
-	for i := 1; i <= 10; i++ {
+	fmt.Println("Enter a number: ")
+	fmt.Scanln(&num)
 
-		for z := 1; z <= 10; z++ {
+	sum := 0
+	x = 0
 
-			fmt.Println(i, "X", z, "= ", z*i)
+	for i := 1; num > 0; i++ {
 
-		}
+		x = num % 10
+		num = num / 10
 
+		fmt.Println(x)
+		sum += x
 	}
-
+	fmt.Print(sum)
 }
