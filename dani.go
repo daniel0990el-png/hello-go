@@ -2,28 +2,31 @@ package main
 
 import "fmt"
 
-// maxDigit מחזירה את הספרה הכי גדולה במספר
-func maxDigit(num int) int {
-	if num < 0 {
-		num = -num // אם המספר שלילי נהפוך אותו לחיובי
-	}
+func sumAndAverage(num int) (int, float64) {
+	var count int
+	var sum int
 
-	max := 0
 	for num > 0 {
-		digit := num % 10
-		if digit > max {
-			max = digit
-		}
-		num /= 10
+
+		sum += num % 10
+
+		count++
+		num = num / 10
+
 	}
-	return max
+	return sum, float64(sum) / float64(count)
+
 }
 
 func main() {
 	var number int
-	fmt.Print("Enter a number: ")
-	fmt.Scanln(&number)
+	var sum int = 0
+	var avg float64 = 0
 
-	biggest := maxDigit(number)
-	fmt.Println("The biggest digit is:", biggest)
+	fmt.Print("Enter a num: ")
+	fmt.Scan(&number)
+
+	sum, avg = sumAndAverage(number)
+	fmt.Println("the sum is ", sum, "the avg is", avg)
+
 }
